@@ -50,7 +50,7 @@ public class Book {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public void setYear(int year) {
+	public void setYearPublished(int year) {
 		this.yearPublished = year;
 	}
 	public void setIsbn(String isbn) {
@@ -71,7 +71,7 @@ public class Book {
 	public String getAuthor() {
 		return author;
 	}
-	public int getYear() {
+	public int getYearPublished() {
 		return yearPublished;
 	}
 	public String getIsbn() {
