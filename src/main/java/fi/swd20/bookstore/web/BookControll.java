@@ -42,6 +42,6 @@ public class BookControll {
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String deleteBook(@PathVariable(name = "id") Long id) {
 		bookrespository.deleteById(id); // SQL DELETE
-		return "redirect:/studentlist"; // uudelleenohjaus listaussivulle
+		return "redirect:/booktlist"; // uudelleenohjaus listaussivulle
 	}
 }
