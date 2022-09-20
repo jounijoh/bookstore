@@ -14,13 +14,13 @@ public class Book {
 	private String author;
 	private int yearPublished;
 	private String isbn;
-	private String price;
+	private double price;
 	
 	//konstruktorit
 	public Book() {
 	}
 	
-	public Book(Long id, String title, String author, int year, String isbn, String price) {
+	public Book(Long id, String title, String author, int year, String isbn, double price) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -30,7 +30,7 @@ public class Book {
 		this.price = price;
 	}
 
-	public Book(String title, String author, int year, String isbn, String price) {
+	public Book(String title, String author, int year, String isbn, double price) {
 		super();
 		this.title = title;
 		this.author = author;
@@ -56,7 +56,7 @@ public class Book {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	//getterit
@@ -77,7 +77,7 @@ public class Book {
 	public String getIsbn() {
 		return isbn;
 	}
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
 	//tostring
