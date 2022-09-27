@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 
 import fi.swd20.bookstore.domain.Book;
 import fi.swd20.bookstore.domain.BookRespository;
+import fi.swd20.bookstore.domain.Category;
+import fi.swd20.bookstore.domain.CategoryRespository;
 
 @SpringBootApplication
 public class BookstoreApplication {
@@ -19,15 +21,30 @@ public class BookstoreApplication {
 	}
 
 	@Bean
-	public CommandLineRunner bookDemo(BookRespository repository) {
+	public CommandLineRunner bookCategoryDemo(BookRespository repository,
+			CategoryRespository categoryRepo) {
 		return (args) -> {
+			log.info("Tallennetaan pari kategoriaa");
+			Category category1 = new Category("Scifi");
+			categoryRepo.save(category1);
+			Category category2 = new Category("Fantasy");
+			categoryRepo.save(category2);
+			Category category3 = new Category("Action");
+			categoryRepo.save(category3);
+			
 			log.info("Tallennetaan pari kirjaa");
-			repository.save(new Book("Testikirja", "Testi Kirjoittaja", 2222, "24-24-24", 35.5));
-			repository.save(new Book("Demo-Opus", "Mikko Maharadja", 1654, "ad-32-ad", 9.99));
+			repository.save(new Book("Testikirja", "Testi Kirjoittaja", 2222, "24-24-24", 35.5, category1));
+			repository.save(new Book("Demo-Opus", "Mikko Maharadja", 1654, "ad-32-ad", 9.99, category2));
+			
 			
 			log.info("Haetaan kirjat");
 			for (Book book : repository.findAll()) {
 				log.info(book.toString());	
+			
+			log.info("Haetaan kategoriat");
+			for (Category category : categoryRepo.findAll()) {
+				log.info(category.toString());
+			}
 			}
 		};
 	}

@@ -66,7 +66,8 @@ public class BookController {
 		model.addAttribute("book", book); // kirjan tiedot -> templatelle
 		return "editbook"; // editbook.html
 	}
-
+	
+	// tallennetaan templatella editoitu kirja
 	@PostMapping("/update/{id}")
 	public String updateBook(@PathVariable("id") Long id, Model model, Book book) {
 

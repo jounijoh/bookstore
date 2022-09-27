@@ -4,11 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Book {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	private String author;
@@ -16,11 +18,14 @@ public class Book {
 	private String isbn;
 	private double price;
 	
+	@ManyToOne
+	@JoinColumn(name = "catergoryId")
+	private Category category;
 	//konstruktorit
 	public Book() {
 	}
 	
-	public Book(Long id, String title, String author, int year, String isbn, double price) {
+	public Book(Long id, String title, String author, int year, String isbn, double price, Category category) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -28,15 +33,17 @@ public class Book {
 		this.yearPublished = year;
 		this.isbn = isbn;
 		this.price = price;
+		this.category = category;
 	}
 
-	public Book(String title, String author, int year, String isbn, double price) {
+	public Book(String title, String author, int year, String isbn, double price, Category category) {
 		super();
 		this.title = title;
 		this.author = author;
 		this.yearPublished = year;
 		this.isbn = isbn;
 		this.price = price;
+		this.category = category;
 	}
 	//setterit
 	
@@ -59,6 +66,10 @@ public class Book {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	//getterit
 	
 	public Long getId() {
@@ -80,11 +91,19 @@ public class Book {
 	public double getPrice() {
 		return price;
 	}
+	public Category getCategory() {
+		return category;
+	}
+	
 	//tostring
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", author=" + author + ", year=" + yearPublished + ", isbn=" + isbn + ", price=" + price
-				+ "]";
+		 if (this.category != null)
+				return "Book [title=" + title + ", author=" + author + ", year=" + yearPublished + ", isbn=" + isbn + ", price=" + price
+				+ " category" + this.getCategory() + "]";
+		 else
+			 return "Book [title=" + title + ", author=" + author + ", year=" + yearPublished + ", isbn=" + isbn + ", price=" + price + "]";
+		 
 	}
 
 
