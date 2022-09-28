@@ -27,12 +27,6 @@ public class Category {
 			this.name = name;
 		}
 
-		public Category(Long categoryId, String name) {
-			this.categoryId = categoryId;
-			this.name = name;
-		}
-
-		
 		// Setterit 
 		
 		public void setCategoryId(Long categoryId) {

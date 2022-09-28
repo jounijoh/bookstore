@@ -21,23 +21,14 @@ public class Book {
 	@ManyToOne
 	@JoinColumn(name = "catergoryId")
 	private Category category;
+	
+	
 	//konstruktorit
 	public Book() {
 	}
 	
-	public Book(Long id, String title, String author, int year, String isbn, double price, Category category) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.author = author;
-		this.yearPublished = year;
-		this.isbn = isbn;
-		this.price = price;
-		this.category = category;
-	}
-
 	public Book(String title, String author, int year, String isbn, double price, Category category) {
-		super();
+		
 		this.title = title;
 		this.author = author;
 		this.yearPublished = year;
@@ -45,6 +36,7 @@ public class Book {
 		this.price = price;
 		this.category = category;
 	}
+	
 	//setterit
 	
 	public void setId(Long id) {
@@ -70,6 +62,7 @@ public class Book {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+	
 	//getterit
 	
 	public Long getId() {
@@ -96,6 +89,7 @@ public class Book {
 	}
 	
 	//tostring
+	
 	@Override
 	public String toString() {
 		 if (this.category != null)

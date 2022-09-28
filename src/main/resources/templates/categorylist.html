@@ -16,7 +16,7 @@
 			<td th:text="${category.categoryId}"></td>
 			<td th:text="${category.name}"></td>
 			<td>
-			<a th:href="@{/delete/{id}(id=${category.categoryId})}" class="btn btn-danger">Delete</a>
+			<a th:href="@{/deletecategory/{id}(id=${category.categoryId})}" class="btn btn-danger">Delete</a>
 			<a th:href="@{/edit/{id}(id=${category.categoryId})}" class="btn btn-primary">Edit</a>
 			</td>
 		</tr>
