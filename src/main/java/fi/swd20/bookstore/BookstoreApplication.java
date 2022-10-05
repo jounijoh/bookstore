@@ -39,8 +39,8 @@ public class BookstoreApplication {
 			repository.save(new Book("Demo-Opus", "Mikko Maharadja", 1654, "ad-32-ad", 9.99, category2));
 			
 			log.info("Luodaan käyttäjät");
-			User user1= new User("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER", "user@hh.fi");
-			User user2 = new User("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN", "admin@hh.fi");
+			User user1= new User("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "user@hh.fi", "USER");
+			User user2 = new User("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "admin@hh.fi", "ADMIN");
 			userrepository.save(user1);
 			userrepository.save(user2);
 
