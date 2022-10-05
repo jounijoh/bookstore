@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import fi.swd20.bookstore.domain.Category;
-import fi.swd20.bookstore.domain.CategoryRespository;
+import fi.swd20.bookstore.domain.CategoryRepository;
 
 @Controller
 public class CategoryController {
 
 	@Autowired
-	private CategoryRespository categoryrepository;
+	private CategoryRepository categoryrepository;
 	
 	//listaa kategoriat
 	@GetMapping("/categorylist")
@@ -47,6 +47,9 @@ public class CategoryController {
 		categoryrepository.deleteById(categoryId);// SQL DELETE
 		return "redirect:/booklist"; // uudelleenohjaus listaussivulle
 	}
+	
+	// Rest Service
+	
 
 	
 }

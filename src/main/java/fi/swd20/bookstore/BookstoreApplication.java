@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import fi.swd20.bookstore.domain.Book;
-import fi.swd20.bookstore.domain.BookRespository;
+import fi.swd20.bookstore.domain.BookRepository;
 import fi.swd20.bookstore.domain.Category;
-import fi.swd20.bookstore.domain.CategoryRespository;
+import fi.swd20.bookstore.domain.CategoryRepository;
 
 @SpringBootApplication
 public class BookstoreApplication {
@@ -21,8 +21,8 @@ public class BookstoreApplication {
 	}
 
 	@Bean
-	public CommandLineRunner bookCategoryDemo(BookRespository repository,
-			CategoryRespository categoryRepo) {
+	public CommandLineRunner bookCategoryDemo(BookRepository repository,
+			CategoryRepository categoryRepo) {
 		return (args) -> {
 			log.info("Tallennetaan pari kategoriaa");
 			Category category1 = new Category("Scifi");
